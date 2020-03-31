@@ -1,0 +1,37 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="id=edge">
+    <title>3-31测试 by YJH</title>
+
+
+
+
+    <script>
+        function login(){
+            var name = document.getElementById("name").Value;
+            var age = document.getElementById("password").Value;
+            $ajax({
+                type:"POST",
+                dataType:"json",
+                url: '',
+                contentType:"json",
+                data:JSON.stringify({
+                    "Name": name,
+                    "Age": age
+                }),
+
+            })
+        }
+    </script>
+</head>
+
+<body>
+    <form action="" method="post" align="center" style="margin-top: 30%;">
+        <input type="text" id="name" placeholder="Name:"/><br/>
+        <input type="text" id="age" placeholder="Age:"/><br/>
+        <input type="submit" onclick="login()" value="Login"/><br/>
+    </form>
+</body>
