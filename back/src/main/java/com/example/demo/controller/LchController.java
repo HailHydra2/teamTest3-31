@@ -26,7 +26,7 @@ public class LchController {
     public @ResponseBody AjaxResponse saveArticle(@RequestBody user use) {
         log.info("saveArticle:{}",use);
 
-        use.name="liuchenghua"
+        use.name="liuchenghua";
         return AjaxResponse.success(use);
 
     }
