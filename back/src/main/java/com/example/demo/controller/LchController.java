@@ -10,24 +10,11 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/lch")
 public class LchController {
 
-    @PutMapping("/hello1")
-    public @ResponseBody
-    AjaxResponse updateArticle(@RequestBody Article article) {
-
-        /*article.setId(id);
-        log.info("updateArticle：{}",article);
-        return AjaxResponse.success(article);
-         */
-        return AjaxResponse.success(article);
-
-    }
-
-    @PostMapping("/user")
-    public @ResponseBody AjaxResponse saveArticle(@RequestBody user use) {
-        log.info("saveArticle:{}",use);
-
-        use.name="liuchenghua";
-        return AjaxResponse.success(use);
-
+    @RequestMapping("/user")
+    public AjaxResponse wshControll(@RequestBody user u){
+        log.info("user {}", u);
+        u.setName("lch");
+        u.setAge(20);
+        return AjaxResponse.success(u);
     }
 }
