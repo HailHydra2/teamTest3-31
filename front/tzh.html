@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Vue</title>
+<script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
+</head>
+<body>
+<div id="form">
+  <label for="username">姓名：</label>
+  <input type="text" id="username" v-model.trim="username">
+  <br>
+  <label for="age">年龄：</label>
+  <input type="number" id="age" v-model.number="age">
+  <br>
+  <br>
+  <input type="button" value="post请求" @click="post">
+  <br/>
+  <br/>
+  <span>昵称: {{ username }}</span> 
+  <br>
+  <span>年龄: {{ age }}</span>
+  <br>
+</div>
+ 
+<script>
+    
+var vm=new Vue({
+  el: '#form',
+  data: {
+	  //初始值
+	  username:'username',
+	  age:18,
+  },
+	methods:{
+    post:function(){
+        axios.post("localhost:8080/wsh/user",
+    {username:this.username,age:this.age})
+    .then(function(response){
+        console.log(response);
+    },function(err){
+        console.log(err);
+    })}}
+    
+    })
+
+    console.log(username);
+</script>
+</body>
+</html>
