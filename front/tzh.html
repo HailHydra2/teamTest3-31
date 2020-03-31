@@ -8,7 +8,7 @@
 <body>
 <div id="form">
   <label for="username">姓名：</label>
-  <input type="text" id="username" v-model.trim="username">
+  <input type="text" id="name" v-model.trim="name">
   <br>
   <label for="age">年龄：</label>
   <input type="number" id="age" v-model.number="age">
@@ -17,7 +17,7 @@
   <input type="button" value="post请求" @click="post">
   <br/>
   <br/>
-  <span>昵称: {{ username }}</span> 
+  <span>昵称: {{ name }}</span> 
   <br>
   <span>年龄: {{ age }}</span>
   <br>
@@ -29,13 +29,14 @@ var vm=new Vue({
   el: '#form',
   data: {
 	  //初始值
-	  username:'username',
+	  name:'name',
 	  age:18,
   },
 	methods:{
     post:function(){
         axios.post("localhost:8080/wsh/user",
-    {username:this.username,age:this.age})
+    {name:this.name,
+    age:this.age})
     .then(function(response){
         console.log(response);
     },function(err){
@@ -44,7 +45,7 @@ var vm=new Vue({
     
     })
 
-    console.log(username);
+    console.log(name);
 </script>
 </body>
 </html>
