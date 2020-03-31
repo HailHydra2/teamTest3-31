@@ -1,7 +1,7 @@
 package com.example.demo.controller;
 
 import com.example.demo.model.AjaxResponse;
-import com.example.demo.model.Article;
+import com.example.demo.model.user;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 
