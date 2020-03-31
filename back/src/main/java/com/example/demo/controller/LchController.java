@@ -10,6 +10,11 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/lch")
 public class LchController {
 
+    @RequestMapping("/hello")
+    public String hello(){
+        return "hello";
+    }
+
     @RequestMapping("/user")
     public AjaxResponse wshControll(@RequestBody user u){
         log.info("user {}", u);
