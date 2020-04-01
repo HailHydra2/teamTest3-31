@@ -27,4 +27,12 @@ public class WshController {
         return AjaxResponse.success(u);
     }
 
+    @RequestMapping("/test")
+    public AjaxResponse test(){
+        user u = new user();
+        u.setAge(10);
+        u.setName("abc");
+        return AjaxResponse.success(u);
+    }
+
 }
