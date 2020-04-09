@@ -1,10 +1,7 @@
 package com.example.demo.controller;
 
 
-import com.example.demo.model.AjaxResponse;
-import com.example.demo.model.Article;
-import com.example.demo.model.Page;
-import com.example.demo.model.user;
+import com.example.demo.model.*;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -87,6 +84,20 @@ public class WshController {
         u.setName("wsh haha");
         u.setAge(20);
         return AjaxResponse.success(u);
+    }
+
+    @RequestMapping("/grid")
+    public @ResponseBody List<Grid> getGrid(){
+        List<Grid> list = new ArrayList<>();
+        for(int i = 0; i <10; i++){
+            Grid grid = new Grid();
+            grid.setId(i);
+            grid.setLink("link" + i);
+            grid.setNum(i*10);
+            grid.setUserid(i*2);
+            list.add(grid);
+        }
+        return list;
     }
 
 }
