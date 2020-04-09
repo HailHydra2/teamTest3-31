@@ -89,7 +89,7 @@ public class WshController {
     @RequestMapping("/grid")
     public @ResponseBody List<Grid> getGrid(){
         List<Grid> list = new ArrayList<>();
-        for(int i = 0; i <100; i++){
+        for(int i = 0; i <30; i++){
             Grid grid = new Grid();
             grid.setId(i);
             grid.setLink("link" + i);
