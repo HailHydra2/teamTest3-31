@@ -26,6 +26,14 @@ public class AjaxResponse {
         return resultBean;
     }
 
+    public static AjaxResponse error(){
+        AjaxResponse resultBean = new AjaxResponse();
+        resultBean.setIsok(true);
+        resultBean.setCode(404);
+        resultBean.setMessage("error");
+        return resultBean;
+    }
+
     public static AjaxResponse success(Object data) {
         AjaxResponse resultBean = new AjaxResponse();
         resultBean.setIsok(true);
@@ -34,6 +42,7 @@ public class AjaxResponse {
         resultBean.setData(data);
         return resultBean;
     }
+
 
 
 }
